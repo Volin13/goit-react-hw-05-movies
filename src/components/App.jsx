@@ -1,13 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React, { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { lazy, useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { Home, SharedLayout } from './index';
-
-const Movies = lazy(() => import('../pages/Movies/Movies'));
-const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
-const MovieCredits = lazy(() => import('./MovieCredits/MovieCredits'));
-const Reviews = lazy(() => import('./Reviews/Reviews'));
-const NotFound = lazy(() => import('../pages/404/404'));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,9 +11,20 @@ const queryClient = new QueryClient({
   },
 });
 
+const Movies = lazy(() => import('../pages/Movies/Movies'));
+const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
+const MovieCredits = lazy(() => import('./MovieCredits/MovieCredits'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const NotFound = lazy(() => import('../pages/404/404'));
+
 const App = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (pathname === '/goit-react-hw-05-movies') navigate('/');
+  }, [navigate, pathname]);
   return (
-    <div>
+    <>
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
@@ -33,7 +38,7 @@ const App = () => {
           </Route>
         </Routes>
       </QueryClientProvider>
-    </div>
+    </>
   );
 };
 export default App;
