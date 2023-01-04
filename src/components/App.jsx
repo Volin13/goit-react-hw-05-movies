@@ -5,7 +5,7 @@ import { Home, SharedLayout } from './index';
 
 const Movies = lazy(() => import('../pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
-const CastInfo = lazy(() => import('./MovieCredits/MovieCredits'));
+const MovieCredits = lazy(() => import('./MovieCredits/MovieCredits'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 const NotFound = lazy(() => import('../pages/404/404'));
 
@@ -17,7 +17,7 @@ const queryClient = new QueryClient({
   },
 });
 
-export const App = () => {
+const App = () => {
   return (
     <div>
       <QueryClientProvider client={queryClient}>
@@ -26,7 +26,7 @@ export const App = () => {
             <Route index element={<Home />} />
             <Route path="movies" element={<Movies />} />
             <Route path="movies/:movieId" element={<MovieDetails />}>
-              <Route path="cast" element={<CastInfo />} />
+              <Route path="cast" element={<MovieCredits />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>
             <Route path="*" element={<NotFound />} />
@@ -36,3 +36,4 @@ export const App = () => {
     </div>
   );
 };
+export default App;
