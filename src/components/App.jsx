@@ -21,7 +21,7 @@ const App = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   useEffect(() => {
-    if (pathname === '/goit-react-hw-05-movies/') navigate('/');
+    if (pathname === '/goit-react-hw-05-movies') navigate('/');
   }, [navigate, pathname]);
   return (
     <>
