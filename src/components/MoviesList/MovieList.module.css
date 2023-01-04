@@ -1,0 +1,19 @@
+.moviesListTitle {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.movieList {
+  margin-left: 50px;
+  text-decoration: none;
+}
+.movieListItem {
+  font-size: 18px;
+}
+.movieListItem a:hover,
+.movieListItem a:focus {
+  color: orange;
+}
+.movieListItem:not(:last-child) {
+  margin-bottom: 10px;
+}

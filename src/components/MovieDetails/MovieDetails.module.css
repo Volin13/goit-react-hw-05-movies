@@ -1,0 +1,38 @@
+.movieDescriptionContainer {
+  display: flex;
+  gap: 20px;
+  font-size: 25px;
+  padding-top: 10px;
+}
+.movieDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.goBackLink {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.addInfoContainer {
+  padding: 20px;
+  box-sizing: border-box;
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+.addInfoTitle {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.addInfoList {
+  margin-left: 30px;
+}
+.addInfoItem {
+  font-size: 20px;
+  text-decoration: none;
+}
+.detailsMainContainer {
+  padding-top: 10px;
+}

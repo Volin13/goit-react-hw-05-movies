@@ -1,0 +1,14 @@
+.reviewInfo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.reviewList {
+  margin-left: 50px;
+  font-size: 18px;
+}
+.reviewItem {
+  margin-bottom: 15px;
+}
+.reviewTitle {
+  margin-bottom: 15px;
+}
