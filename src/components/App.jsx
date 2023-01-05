@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React, { lazy, useEffect } from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import React, { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { Home, SharedLayout } from './index';
 
 const queryClient = new QueryClient({
@@ -18,11 +18,11 @@ const Reviews = lazy(() => import('./Reviews/Reviews'));
 const NotFound = lazy(() => import('../pages/404/404'));
 
 const App = () => {
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
-  useEffect(() => {
-    if (pathname === '/goit-react-hw-05-movies') navigate('/');
-  }, [navigate, pathname]);
+  // const navigate = useNavigate();
+  // const { pathname } = useLocation();
+  // useEffect(() => {
+  //   if (pathname === '/goit-react-hw-05-movies') navigate('/');
+  // }, [navigate, pathname]);
   return (
     <>
       <QueryClientProvider client={queryClient}>
